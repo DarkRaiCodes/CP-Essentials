@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int count_bitstoFlip(int a,int b) // this function takes to integers and counts the required bits to flip to convert a to b
+{
+    int n=a^b;
+    int count=0;
+    while(n!=0)
+    {
+       n&=(n-1); // n= n & (n-1)
+       count++;
+    }
+    return count;
+}
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    cout<<count_bitstoFlip(a,b);
+}
